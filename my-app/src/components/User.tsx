@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { Container, Typography, TextField, Button, Box } from '@mui/material';
 
 interface User {
   id: number;
@@ -15,7 +16,7 @@ const User: React.FC = () => {
 
   useEffect(() => {
     if (id !== 'new' && id !== undefined) {
-      const userId = parseInt(id, 10); 
+      const userId = parseInt(id, 10);
       const storedUsers = JSON.parse(localStorage.getItem('users') || '[]');
       const user = storedUsers.find((user: User) => user.id === userId);
       if (user) {
@@ -30,7 +31,7 @@ const User: React.FC = () => {
       const newUser = { id: Date.now(), name };
       storedUsers.push(newUser);
     } else {
-      const userId = parseInt(id, 10); 
+      const userId = parseInt(id, 10);
       const userIndex = storedUsers.findIndex((user: User) => user.id === userId);
       if (userIndex !== -1) {
         storedUsers[userIndex].name = name;
@@ -42,7 +43,7 @@ const User: React.FC = () => {
 
   const handleDelete = () => {
     if (id !== undefined) {
-      const userId = parseInt(id, 10); 
+      const userId = parseInt(id, 10);
       let storedUsers = JSON.parse(localStorage.getItem('users') || '[]');
       storedUsers = storedUsers.filter((user: User) => user.id !== userId);
       localStorage.setItem('users', JSON.stringify(storedUsers));
@@ -51,19 +52,28 @@ const User: React.FC = () => {
   };
 
   return (
-    <div>
-      <h2>{id === 'new' ? t('create_user') : t('edit_user')}</h2>
-      <form onSubmit={(e) => { e.preventDefault(); handleSave(); }}>
-        <label>
-          {t('name')}
-          <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-        </label>
-        <button type="submit">{t('save')}</button>
+    <Container>
+      <Typography variant="h4" gutterBottom>
+        {id === 'new' ? t('create_user') : t('edit_user')}
+      </Typography>
+      <Box component="form" onSubmit={(e) => { e.preventDefault(); handleSave(); }} noValidate>
+        <TextField
+          label={t('name')}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          fullWidth
+          margin="normal"
+        /><br />
+        <Button type="submit" variant="contained" color="primary">
+          {t('save')}
+        </Button><br />
         {id !== 'new' && (
-          <button type="button" onClick={handleDelete}>{t('delete_user')}</button>
+          <Button variant="contained" color="secondary" onClick={handleDelete}>
+            {t('delete_user')}
+          </Button>
         )}
-      </form>
-    </div>
+      </Box>
+    </Container>
   );
 };
 

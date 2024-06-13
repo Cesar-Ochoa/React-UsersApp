@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { Container, Typography } from '@mui/material';
 
 const SingleNews: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -9,10 +10,10 @@ const SingleNews: React.FC = () => {
   const newsItem = { id, title: 'News Title', content: 'News Content' };
 
   return (
-    <div>
-      <h2>{newsItem.title}</h2>
-      <p>{newsItem.content}</p>
-    </div>
+    <Container>
+      <Typography variant="h4" gutterBottom>{newsItem.title}</Typography>
+      <Typography>{newsItem.content}</Typography>
+    </Container>
   );
 };
 
