@@ -12,22 +12,39 @@ Access the application:
 
 Open your browser and navigate to http://localhost:3000.
 Versions of libraries used
+
 Node.js: 18.x
+
 React: ^18.2.0
+
 React DOM: ^18.2.0
+
 React Router DOM: ^6.3.0
+
 TypeScript: ^4.6.3
+
 i18next: ^21.6.7
+
 react-i18next: ^11.15.3
+
 Material-UI (MUI):
+
 @mui/material: ^5.3.0
+
 @emotion/react: ^11.7.1
+
 @emotion/styled: ^11.6.0
+
 Testing Libraries:
+
 @testing-library/jest-dom: ^5.16.4
+
 @testing-library/react: ^13.0.0
+
 @testing-library/user-event: ^14.0.0
+
 React Scripts: 5.0.1
+
 Web Vitals: ^2.1.4
 
 # Getting Started with Create React App
