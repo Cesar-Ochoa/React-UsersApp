@@ -4,7 +4,7 @@ import { initReactI18next } from 'react-i18next';
 const resources = {
   en: {
     translation: {
-      "app_title": "My Application",
+      "app_title": "Add Edit Remove Users",
       "users": "Users",
       "news": "News",
       "create_user": "Create User",
@@ -16,7 +16,7 @@ const resources = {
   },
   es: {
     translation: {
-      "app_title": "Mi Aplicación",
+      "app_title": "Agregar Editar Remover Usuarios",
       "users": "Usuarios",
       "news": "Noticias",
       "create_user": "Crear Usuario",
