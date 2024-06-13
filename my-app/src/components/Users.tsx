@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
+interface User {
+  id: number;
+  name: string;
+}
+
 const Users: React.FC = () => {
   const { t } = useTranslation();
-  const users = [
-    { id: 1, name: 'John Doe' },
-    { id: 2, name: 'Jane Doe' }
-  ];
+  const [users, setUsers] = useState<User[]>([]);
+
+  useEffect(() => {
+    const storedUsers = JSON.parse(localStorage.getItem('users') || '[]');
+    setUsers(storedUsers);
+  }, []);
 
   return (
     <div>

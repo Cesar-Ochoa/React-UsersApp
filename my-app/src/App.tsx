@@ -1,13 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import Users from './components/Users';
 import User from './components/User';
 import News from './components/News';
 import SingleNews from './components/SingleNews';
+import { useTranslation } from 'react-i18next';
 
 const App: React.FC = () => {
   const { t } = useTranslation();
+
   return (
     <Router>
       <div>

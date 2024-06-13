@@ -10,7 +10,8 @@ const resources = {
       "create_user": "Create User",
       "edit_user": "Edit User",
       "delete_user": "Delete User",
-      // Add more translations here
+      "save": "Save",
+      "name": "Name"
     }
   },
   es: {
@@ -21,7 +22,8 @@ const resources = {
       "create_user": "Crear Usuario",
       "edit_user": "Editar Usuario",
       "delete_user": "Eliminar Usuario",
-      // Add more translations here
+      "save": "Guardar",
+      "name": "Nombre"
     }
   }
 };
@@ -30,7 +32,7 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: "en", // Default language
+    lng: "en",
     interpolation: {
       escapeValue: false
     }
