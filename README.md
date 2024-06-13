@@ -1,14 +1,13 @@
 Instructions to run the project
+
 Install dependencies:
 
-sh
-Copiar código
 npm install
+
 Run the project:
 
-sh
-Copiar código
 npm start
+
 Access the application:
 
 Open your browser and navigate to http://localhost:3000.
